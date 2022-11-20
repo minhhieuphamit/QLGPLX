@@ -1,0 +1,53 @@
+.header {
+    background-color: #202878;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header .container {
+    background: url(/assets/img/background.jpg);
+}
+
+.header .logo {
+    padding: 10px 0;
+}
+
+.header .navigation {
+    background-color: #202878;
+}
+
+.header .nav {
+    list-style: none;
+    display: inline-block;
+}
+
+.header .nav li {
+    position: relative;
+    display: inline-block;
+}
+
+.header .nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    font-weight: 600;
+}
+
+.header .navigation .ti:hover,
+.header .nav a:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.header .navigation .ti {
+    padding: 10px;
+    float: right;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+
+
