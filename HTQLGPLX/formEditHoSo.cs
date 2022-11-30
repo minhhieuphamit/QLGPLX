@@ -19,8 +19,7 @@ namespace HTQLGPLX
         }
 
         formHoSoGPLX obj = (formHoSoGPLX)Application.OpenForms["formHoSoGPLX"];
-        SqlConnection conn = new SqlConnection(@"Data Source=35.222.184.247;Initial Catalog=QLGPLX;User ID=sqlserver;Password=admin");
-
+        SqlConnection conn = new SqlConnection(@"Data Source=cnpmhutech.database.windows.net;Initial Catalog=cnpm;User ID=phuc;Password=@hutech123");
         private void loadComboBoxMaHang()
         {
             try

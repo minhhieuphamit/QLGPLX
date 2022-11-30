@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 
 namespace HTQLGPLX
@@ -49,18 +48,16 @@ namespace HTQLGPLX
             }
         }
 
-        MySqlConnection Conn = new MySqlConnection("Server = quanlygplx.mysql.database.azure.com; Database = qlgplx; UId = phuc; Pwd = @hutech123; Pooling=false;Character Set=utf8");
+        SqlConnection conn = new SqlConnection(@"Data Source=cnpmhutech.database.windows.net;Initial Catalog=cnpm;User ID=phuc;Password=@hutech123");
+
         internal void loadDataGridView()
         {
             try
             {
-                //MySqlConnection Conn = new MySqlConnection(connstring);
-                Conn.Open();
-                string querry = "CALL proc_HoSoGPLX()";
-                MySqlDataAdapter adap = new MySqlDataAdapter(querry, Conn);
-                MySqlCommandBuilder cmd = new MySqlCommandBuilder(adap);
+                string querry = "EXEC proc_HoSoGPLX";
+                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
                 DataTable dtbl = new DataTable();
-                adap.Fill(dtbl);
+                sda.Fill(dtbl);
                 dataGridViewHSGPLX.DataSource = dtbl;
             }
             catch (Exception ex)
@@ -69,7 +66,7 @@ namespace HTQLGPLX
             }
             finally
             {
-                Conn.Close();
+                conn.Close();
             }
         }
         
@@ -95,12 +92,10 @@ namespace HTQLGPLX
         {
             try
             {
-                Conn.Open();
-                string querry = "CALL proc_TimHoSoGPLX('" + textBoxSearch.Text + "')";
-                MySqlDataAdapter adap = new MySqlDataAdapter(querry, Conn);
-                MySqlCommandBuilder cmd = new MySqlCommandBuilder(adap);
+                String querry = "EXEC proc_TimHoSoGPLX '" + textBoxSearch.Text + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
                 DataTable dtbl = new DataTable();
-                adap.Fill(dtbl);
+                sda.Fill(dtbl);
                 if (textBoxSearch.Text == "Search")
                 {
                     MessageBox.Show("Vui lòng điền thông tin cần tìm kiếm", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -122,7 +117,7 @@ namespace HTQLGPLX
             }
             finally
             {
-                Conn.Close();
+                conn.Close();
             }
         }
 
@@ -149,7 +144,7 @@ namespace HTQLGPLX
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-           string maGPLX = dataGridViewHSGPLX.CurrentRow.Cells["MaGPLX"].Value.ToString();
+            string maGPLX = dataGridViewHSGPLX.CurrentRow.Cells["MaGPLX"].Value.ToString();
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xoá hồ sơ GPLX có mã " + maGPLX + " không?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (maGPLX == "")
             {
@@ -159,12 +154,10 @@ namespace HTQLGPLX
             {
                 try
                 {
-                    Conn.Open();
-                    string querry = "CALL proc_XoaHoSoGPLX('"+maGPLX+"')";
-                    MySqlDataAdapter adap = new MySqlDataAdapter(querry, Conn);
-                    MySqlCommandBuilder cmd = new MySqlCommandBuilder(adap);
+                    String querry = "EXEC proc_XoaHoSoGPLX '" + maGPLX + "'";
+                    SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
                     DataTable dtbl = new DataTable();
-                    adap.Fill(dtbl);
+                    sda.Fill(dtbl);
                     MessageBox.Show("Xoá hồ sơ GPLX có mã " + maGPLX + " thành công", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     formHoSo_Load(sender, e);
                 }
@@ -174,7 +167,7 @@ namespace HTQLGPLX
                 }
                 finally
                 {
-                    Conn.Close();
+                    conn.Close();
                 }
             }
             else if (dialogResult == DialogResult.No)

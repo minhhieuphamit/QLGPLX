@@ -8,14 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace HTQLGPLX
 {
     public partial class formThemHSGPLX : Form
     {
-        MySqlConnection Conn = new MySqlConnection("Server = quanlygplx.mysql.database.azure.com; Database = qlgplx; UId = phuc; Pwd = @hutech123; Pooling=false;Character Set=utf8");
-
+        SqlConnection conn = new SqlConnection(@"Data Source=cnpmhutech.database.windows.net;Initial Catalog=cnpm;User ID=phuc;Password=@hutech123");
         public formThemHSGPLX()
         {
             InitializeComponent();
@@ -25,14 +23,10 @@ namespace HTQLGPLX
         {
             try
             {
-
-
-                Conn.Open();
                 String querry = "SELECT SoCCCD FROM LyLich";
-                MySqlDataAdapter adap = new MySqlDataAdapter(querry, Conn);
-                MySqlCommandBuilder cmd = new MySqlCommandBuilder(adap);
-                DataTable dt = new DataTable(); ;
-                adap.Fill(dt);
+                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
                 comboBoxCCCD.DisplayMember = "SoCCCD";
                 comboBoxCCCD.DataSource = dt;
                 comboBoxCCCD.SelectedIndex = -1;
@@ -43,7 +37,7 @@ namespace HTQLGPLX
             }
             finally
             {
-                Conn.Close();
+                conn.Close();
             }
         }
 
@@ -52,11 +46,9 @@ namespace HTQLGPLX
             try
             {
                 String querry = "SELECT MaHang FROM HangGPLX";
-                Conn.Open();
-                MySqlDataAdapter adap = new MySqlDataAdapter(querry, Conn);
-                MySqlCommandBuilder cmd = new MySqlCommandBuilder(adap);
-                DataTable dt = new DataTable(); ;
-                adap.Fill(dt);
+                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
                 comboBoxMaHang.DisplayMember = "MaHang";
                 comboBoxMaHang.DataSource = dt;
                 comboBoxMaHang.SelectedIndex = -1;
@@ -67,7 +59,7 @@ namespace HTQLGPLX
             }
             finally
             {
-                Conn.Close();
+                conn.Close();
             }
         }
 
@@ -76,10 +68,9 @@ namespace HTQLGPLX
             try
             {
                 String querry = "SELECT TenTT FROM TrungTamSatHach";
-                MySqlDataAdapter adap = new MySqlDataAdapter(querry, Conn);
-                MySqlCommandBuilder cmd = new MySqlCommandBuilder(adap);
-                DataTable dt = new DataTable(); ;
-                adap.Fill(dt);
+                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
                 comboBoxTTSatHach.DisplayMember = "TenTT";
                 comboBoxTTSatHach.DataSource = dt;
                 comboBoxTTSatHach.SelectedIndex = -1;
@@ -90,7 +81,7 @@ namespace HTQLGPLX
             }
             finally
             {
-                Conn.Close();
+                conn.Close();
             }
         }
 
@@ -102,11 +93,10 @@ namespace HTQLGPLX
             {
                 try
                 {
-                    String querry = "SELECT CONCAT(HoLot  ,' ', ten) as HoTen FROM LyLich WHERE SoCCCD = '" + comboBoxCCCD.Text + "'";
-                    MySqlDataAdapter adap = new MySqlDataAdapter(querry, Conn);
-                    MySqlCommandBuilder cmd = new MySqlCommandBuilder(adap);
-                    DataTable dt = new DataTable(); ;
-                    adap.Fill(dt);
+                    String querry = "SELECT HoLot + ' ' + Ten FROM LyLich WHERE SoCCCD = '" + comboBoxCCCD.Text + "'";
+                    SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
                     labelHoTen.Text = dt.Rows[0][0].ToString();
                 }
                 catch (Exception ex)
@@ -115,7 +105,7 @@ namespace HTQLGPLX
                 }
                 finally
                 {
-                    Conn.Close();
+                    conn.Close();
                 }
             };
             loadComboBoxTTSatHach();
@@ -134,28 +124,27 @@ namespace HTQLGPLX
                 else
                 {
                     string querry = "SELECT MaGPLX FROM HoSoGPLX WHERE MaGPLX = '" + textBoxMaGPLX.Text + "'";
-                    MySqlDataAdapter adap = new MySqlDataAdapter(querry, Conn);
-                    MySqlCommandBuilder cmd = new MySqlCommandBuilder(adap);
-                    DataTable dt = new DataTable(); ;
-                    adap.Fill(dt);
+                    SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
                     if (dt.Rows.Count > 0)
                     {
                         MessageBox.Show("Số GPLX đã tồn tại!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        Conn.Open();
-                        String querry1 = "SELECT MaTT FROM TrungTamSatHach WHERE TenTT LIKE "+comboBoxTTSatHach.Text+"";
-                        MySqlDataAdapter adap1 = new MySqlDataAdapter(querry1, Conn);
-                        MySqlCommandBuilder cmd1 = new MySqlCommandBuilder(adap1);
-                        DataTable dt1 = new DataTable(); ;
-                        adap.Fill(dt1);
+                        String querry1 = "SELECT MaTT FROM TrungTamSatHach WHERE TenTT LIKE N'" + comboBoxTTSatHach.Text + "'";
+                        SqlDataAdapter sda1 = new SqlDataAdapter(querry1, conn);
+                        DataTable dt1 = new DataTable();
+                        sda1.Fill(dt1);
                         String maTT = dt1.Rows[0][0].ToString();
 
+                        conn.Open();
                         String querry2 = "INSERT INTO HoSoGPLX VALUES('" + textBoxMaGPLX.Text + "','" + comboBoxCCCD.Text + "','" + comboBoxMaHang.Text + "','" + dateTimePickerNgayCap.Value.ToString("yyyy-MM-dd") + "','" + dateTimePickerNgayHetHan.Value.ToString("yyyy-MM-dd") + "','" + maTT + "','" + textBoxDiemLT.Text + "','" + textBoxDiemTH.Text + "')";
-                        MySqlCommand cmd2 = new MySqlCommand(querry2,Conn);
-                        cmd2.ExecuteNonQuery();
+                        SqlCommand cmd = new SqlCommand(querry2, conn);
+                        cmd.ExecuteNonQuery();
                         MessageBox.Show("Thêm thông tin thành công", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         obj.loadDataGridView();
                     }
                 }
@@ -166,7 +155,7 @@ namespace HTQLGPLX
             }
             finally
             {
-                Conn.Close();
+                conn.Close();
             }
         }
 

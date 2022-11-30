@@ -18,7 +18,7 @@ namespace HTQLGPLX
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-HINEBV60;Initial Catalog=QLGPLX;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=cnpmhutech.database.windows.net;Initial Catalog=cnpm;User ID=phuc;Password=@hutech123");
         internal void loadDataGridView()
         {
             try

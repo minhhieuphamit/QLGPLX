@@ -25,8 +25,7 @@ namespace HTQLGPLX
             }
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=35.222.184.247;Initial Catalog=QLGPLX;User ID=sqlserver;Password=admin");
-
+        SqlConnection conn = new SqlConnection(@"Data Source=cnpmhutech.database.windows.net;Initial Catalog=cnpm;User ID=phuc;Password=@hutech123");
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
@@ -137,11 +136,6 @@ namespace HTQLGPLX
             toolTipBtnLogin.SetToolTip(buttonLogin, "Đăng nhập");
             ToolTip toolTipBtnExit = new ToolTip();
             toolTipBtnExit.SetToolTip(buttonExit, "Thoát");
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
