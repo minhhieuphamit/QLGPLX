@@ -1,0 +1,32 @@
+.footer {
+    color: #fff;
+    background-color: #202878;
+}
+
+.footer .container {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer .address {
+    margin-bottom: 10px;
+}
+
+.footer .link,
+.footer .link-1,
+.footer .link-2 {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.footer .address a,
+.footer .link a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer .address a{
+    font-size: 24px;  
+    font-weight: 500;  
+}
+

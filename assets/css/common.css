@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin : 0; 
+    box-sizing: border-box;   
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ti {
+    color: #fff;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.col-left {
+    width: 200px;
+    padding: 10px;
+}
+
+.col-right {
+    width: 450px;
+    margin: 0 20px;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.blur {
+    opacity: 0.6;
+}
+
