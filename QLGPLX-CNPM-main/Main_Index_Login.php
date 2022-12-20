@@ -101,7 +101,7 @@
             <div class="modal-container js-modal-container">
                 <div class="modal-close js-modal-close"><i class="ti-close"></i></div>
                 <div class="modal-header"><a href="#"><img src="./assets/img/logo.png"></a></div>
-                <form action="Main_Index.php"  method="post">            
+                <form action="index.php"  method="post">            
                     <div class="modal-body">
                         <div class="modal-login">
                             <div class="modal-title">Đăng Nhập</div>

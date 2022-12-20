@@ -498,7 +498,7 @@
             }
         }else {
             echo "<script>alert('Vui lòng đăng nhập');</script>" ;
-            echo "<script>window.location.href ='Main_Index.php'</script>";
+            echo "<script>window.location.href ='index.php'</script>";
         }
     }
     //Sửa hồ sơ
@@ -522,7 +522,7 @@
             }
         }else {
             echo "<script>alert('Vui lòng đăng nhập');</script>" ;
-            echo "<script>window.location.href ='Main_Index.php'</script>";
+            echo "<script>window.location.href ='index.php'</script>";
         }
     }
     //Xóa hồ sơ
@@ -539,7 +539,7 @@
             }
         }else {
             echo "<script>alert('Vui lòng đăng nhập');</script>" ;
-            echo "<script>window.location.href ='Main_Index.php'</script>";
+            echo "<script>window.location.href ='index.php'</script>";
         }
     }
 ?>
