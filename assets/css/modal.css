@@ -1,0 +1,92 @@
+.modal {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open {
+    display: flex !important;
+}
+
+.modal .ti {
+    color: rgb(158, 158, 158);
+    font-size: 20px;
+}
+
+.modal .form-control {
+    padding: 4px;
+    border: none;
+    outline: none;
+    width: 550px;
+}
+
+.modal .login {
+    margin: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.modal .modal-container {
+    background-color: #fff;
+    width: 600px;
+    max-width: calc(100% - 100px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease 0.4;
+    border-radius: 5px;
+}
+
+.modal .modal-close {
+    float: right;
+    padding: 6px 10px;
+    color: #fff;
+}
+
+.modal .modal-login-button button:hover,
+.modal .modal-close:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.modal .modal-header {
+    padding: 20px;
+    background-color:#202878;
+    background: url(/assets/img/background.jpg);
+}
+
+.modal .modal-title {
+    color: #1f8bc9;
+    font-size: 30px;
+    padding: 10px 10px 0;
+}
+
+.modal .modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .modal-login-button button {
+    padding: 8px;
+    margin: 20px;
+    border-radius: 16px;
+    background-color: #1f8bc9;
+    color: #fff;
+    border: none;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

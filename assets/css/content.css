@@ -1,0 +1,61 @@
+.content {
+    margin: 20px 0;
+}
+
+.content .search-driving-license {
+    background: url(/assets/img/license_background.png);
+}
+
+.content .news li {
+    list-style: none;
+    margin: 4px 0;
+}
+
+.content .news a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.content .search-heading {
+    padding: 16px 10px;
+}
+
+.content .search-row {
+    margin-bottom: 16px;
+}
+
+.content .btn-send-contact {
+    margin: 10px;
+    padding: 8px;
+    background: #fab000;
+    color: #fff;
+    border: none;
+    width: 160px;
+}
+
+.content .btn-send-contact:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.content .label {
+    display: inline-block;
+}
+
+.content .form-control {
+    padding: 4px;
+}
+
+.content .news .title {
+    background-color: #1f8bc9;
+}
+
+.content .news-heading {
+    background-color: #202878;
+    display: inline-block;
+    color: #fff;
+    padding: 6px 10px;
+    clip-path: polygon(0% 0%, 88% 0, 100% 50%, 88% 100%, 0% 100%);
+}
