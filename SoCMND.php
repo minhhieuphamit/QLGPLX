@@ -18,7 +18,7 @@
       }  
       else  
       {  
-           $output .= '<li>So CMND khong hop le</li>';  
+           $output .= '<li>Số CMND/CCCD không hợp lệ !!!</li>';  
       }  
       $output .= '</ul>';  
       echo $output;  

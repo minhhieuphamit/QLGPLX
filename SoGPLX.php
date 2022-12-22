@@ -18,7 +18,7 @@
       }  
       else  
       {  
-           $output .= '<li>So GPLX khong hop le</li>';  
+           $output .= '<li>Mã GPLX không hợp lệ!!!</li>';  
       }  
       $output .= '</ul>';  
       echo $output;  
