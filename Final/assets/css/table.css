@@ -1,0 +1,22 @@
+.container-lg,
+.container-fluid {
+    width: 1400px;
+    margin: auto;
+}
+
+.container-lg thead th,
+.container-fluid thead th {
+    vertical-align: middle;
+}
+
+.container-lg tbody td,
+.container-fluid tbody td {
+    vertical-align: baseline; 
+}
+
+.container-lg tbody td button,
+.container-fluid tbody td button {
+    display: block;
+    margin: 4px;
+}
+
