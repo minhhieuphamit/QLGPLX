@@ -341,9 +341,8 @@ if (isset($_POST['submit']))
                     <thead>
                         <tr>
                             <th scope="col">Mã vi phạm</th>
-                            <th scope="col">Nội dung vi phạm</th>
                             <th scope="col">Ngày vi phạm</th>
-
+                            <th scope="col">Nội dung vi phạm</th>
                         </tr>
                     </thead>
                     <tbody id = getViPham>

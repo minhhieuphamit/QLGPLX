@@ -107,14 +107,11 @@
     width: 444px;
     display: inline-block;
 }
-<<<<<<< HEAD
 .pl-10.pr-10.special 
 {
     width: 888px !important;
     display: inline-block;
 }
-=======
->>>>>>> 70bd44feaa98c83b040ea9e86bdd9260c21ed754
 
 @keyframes modalFadeIn {
     from {
