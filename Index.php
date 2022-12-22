@@ -150,7 +150,7 @@
                         <h4 class="address"><strong><a href="Index.php">Trang thông tin điện tử giấy phép lái xe</a></strong></h4>
                         <div class="link">
                             <i class="ti ti-facebook">
-                                <span><a href="https://www.facebook.com/ptt27092002">Facebook</a></span>
+                                <span><a href="https://www.facebook.com/itHutech">Facebook</a></span>
                             </i>
                             <i class="ti ti-github">
                                 <span><a href="https://github.com/minhhieuphamit/QLGPLX-CNPM">Github</a></span>
