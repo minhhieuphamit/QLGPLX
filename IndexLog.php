@@ -127,7 +127,7 @@
                 <form action="Index.php"  method="post">            
                     <div class="modal-body">
                         <div class="modal-login">
-                            <div class="modal-title">Đăng Nhập</div>
+                            <div class="modal-title">Đăng nhập</div>
                             <div class="modal-username login">
                             <i class="ti ti-user"></i>
                             <input class="form-control" type="text" id = "username" name="username"placeholder="Tên đăng nhập hoặc email">
