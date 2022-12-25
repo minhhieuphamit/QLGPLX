@@ -7,11 +7,13 @@
 .container-lg thead th,
 .container-fluid thead th {
     vertical-align: middle;
+    padding: 10px;
 }
 
 .container-lg tbody td,
 .container-fluid tbody td {
     vertical-align: baseline; 
+    padding: 10px;
 }
 
 .container-lg tbody td button,
