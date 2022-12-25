@@ -6,6 +6,7 @@
 .footer .container {
     padding: 30px 0;
     text-align: center;
+    background: url(/assets/img/background.jpg);
 }
 
 .footer .address {
