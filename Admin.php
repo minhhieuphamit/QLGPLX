@@ -88,6 +88,28 @@
         <link rel="stylesheet" href="./assets/css/table.css">
         <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
         <script src="https://kit.fontawesome.com/f997a3e2c7.js" crossorigin="anonymous"></script>
+        <style>  
+            .list-unstyled
+            {
+            top: 70px;
+            left: 0;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color:#eee;  
+            width: 100%;
+            max-height: 100px;
+            overflow-y: auto;
+            }
+            .list-unstyled li
+            {
+            cursor:pointer;  
+            padding:12px; 
+            }
+            .table {
+            zoom: 80%;
+            }
+        </style>
     </head>
 
     <body onload= 'disableBtn()'>
