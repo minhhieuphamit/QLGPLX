@@ -487,7 +487,8 @@
             </div>
         </div>    
         
-        <script src="Admin.js">
+        <script src="./JavaScript/Admin.js">
+            
             function disableBtn() {
                 <?php
                 $id_role = $_SESSION['idRole'];
