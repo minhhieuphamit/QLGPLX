@@ -90,7 +90,7 @@
         <script src="https://kit.fontawesome.com/f997a3e2c7.js" crossorigin="anonymous"></script>
     </head>
 
-    <body onload= 'disableBtn()'>
+    <body>
         <div id="main">
             <div id="module-1" class="header">
                 <div class="container">
