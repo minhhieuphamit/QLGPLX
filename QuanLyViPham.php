@@ -105,7 +105,7 @@
         </style>
     </head>
 
-    <body onload= 'disableBtn()'>
+    <body>
         <div id="main">
             <div id="module-1" class="header">
                 <div class="container">
