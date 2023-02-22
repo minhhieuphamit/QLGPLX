@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'gplx'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_74DA05CE2DDF461D97F47AA0C28007FC }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E4362CEEF2224BD29E85AC35016825AD }}
